@@ -11,7 +11,7 @@ int[] g = new int [16];
 int[] b = new int [16];
 
 void setup() {
-  size(1200, 1000);
+  size(1200, 800);
   background(0);
   // Load emotions file and check is there's a match
   lines = loadStrings("emotions.txt");
@@ -149,6 +149,7 @@ void mouseReleased(){
     }
     if(x >= 1050 && x <= 1150 && y >= 700 && y <= 750){
       fill(#000000);
+      stroke(#000000);
       rect(500, 0, 1000, 1000);
       fill(#ffffff);
       ellipse(850, 380, 600, 600);
@@ -175,17 +176,8 @@ void variableCircle(int x, int y) {
     int red = r[fillColorNum];
     int blue = b[fillColorNum];
     int green = g[fillColorNum];
-    // If opacity greater than 100, use watercolor effect
-    if(t > 100){
-      fill(color(red, green, blue, t));
-      stroke(color(red, green, blue, t));
-      ellipse(x, y, randRadius, randRadius);
-    }
-    // Else, use colored pencil effect
-    else{
-      fill(color(red, green, blue, t));
-      stroke(color(red, green, blue, t));
-      ellipse(x, y, randRadius, randRadius);
-    }
+    fill(color(red, green, blue, t));
+    stroke(color(red, green, blue, t));
+    ellipse(x, y, randRadius, randRadius);
   }
 }
