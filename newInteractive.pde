@@ -17,6 +17,9 @@ void setup() {
   lines = loadStrings("emotions.txt");
   ellipse(850, 380, 600, 600);
   rect(1050, 700, 100, 50);
+  textSize(30);
+  fill(#FFFFFF);
+  text("Click on an emotion and drag the mouse around the circle.", 10, 50);
   textSize(35);
   fill(#000000);
   text("clear", 1062, 735);
@@ -150,7 +153,7 @@ void mouseReleased(){
     if(x >= 1050 && x <= 1150 && y >= 700 && y <= 750){
       fill(#000000);
       stroke(#000000);
-      rect(500, 0, 1000, 1000);
+      rect(500, 50, 1000, 1000);
       fill(#ffffff);
       ellipse(850, 380, 600, 600);
       rect(1050, 700, 100, 50);
